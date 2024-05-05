@@ -20,7 +20,7 @@ let useStateValue = (initial: 'a) => {
 module ExternalLinkIcon = {
   [@react.component]
   let make = () => {
-    <span className={Css.style([Css.fontSize(`px(10))])}>
+    <span >
       {React.string({js|🔗|js})}
     </span>;
   };
@@ -29,12 +29,7 @@ module ExternalLinkIcon = {
 module Panel = {
   [@react.component]
   let make = (~children) => {
-    <div
-      className={Css.style([
-        Css.width(`vw(100.)),
-        Css.backgroundColor(Theme.Color.backgroundBox),
-        Css.padding2(~v=`rem(0.5), ~h=`rem(1.)),
-      ])}>
+    <div>
       children
     </div>;
   };
@@ -42,21 +37,15 @@ module Panel = {
 
 module ShrinkerText = {
   [@react.component]
-  let make = (~children, ~color) => {
+  let make = (~children) => {
     let first = children.[0] |> String.make(1);
     let rest = String.sub(children, 1, String.length(children) - 1);
 
     <>
-      <span className={Css.style([Css.color(color)])}>
+      <span >
         {React.string(first)}
       </span>
-      <span
-        className={Css.style([
-          Css.cursor(`pointer),
-          Css.display(`inline),
-          Css.color(Theme.Color.white),
-          Theme.Media.onMobile([Css.display(`none)]),
-        ])}>
+      <span >
         {React.string(rest)}
       </span>
     </>;
@@ -66,13 +55,8 @@ module ShrinkerText = {
 module Logo = {
   [@react.component]
   let make = () => {
-    <p
-      className={Css.style([
-        Css.fontSize(`px(30)),
-        Css.fontWeight(`bold),
-        Css.margin(`zero),
-      ])}>
-      <ShrinkerText color=Theme.Color.ahrefs> "ahrefs" </ShrinkerText>
+    <p >
+      <ShrinkerText> "ahrefs" </ShrinkerText>
     </p>;
   };
 };
@@ -80,17 +64,8 @@ module Logo = {
 module Dropdown = {
   module Trigger = {
     [@react.component]
-    let make = (~isOpen, ~onClick) => {
-      <div
-        onClick
-        className={Css.style([
-          Css.color(isOpen ? Theme.Color.white : Theme.Color.lightGrey),
-          Css.cursor(`pointer),
-          Css.userSelect(`none),
-          Css.fontSize(`px(14)),
-          Css.whiteSpace(`nowrap),
-          Css.hover([Css.color(Theme.Color.white)]),
-        ])}>
+    let make = (~onClick) => {
+      <div onClick>
         {React.string("More tools")}
       </div>;
     };
@@ -136,45 +111,17 @@ module Dropdown = {
          }
        ); */
 
-    <div className={Css.style([Css.position(`relative)])}>
-      <Trigger isOpen onClick={_e => setIsOpen(!isOpen)} />
+    <div >
+      <Trigger onClick={_e => setIsOpen(!isOpen)} />
       {isOpen
          ? {
-           <div
-             className={Css.style([
-               Css.position(`absolute),
-               Css.top(`px(25)),
-               Css.left(`percent(-50.)),
-               Css.background(Theme.Color.backgroundBox),
-               Css.padding(`rem(1.)),
-               Css.borderRadius(`px(6)),
-               Css.boxShadow(
-                 Css.Shadow.box(
-                   ~x=`zero,
-                   ~y=`zero,
-                   ~blur=`px(10),
-                   ~spread=`px(1),
-                   Css.rgba(0, 0, 0, `percent(30.)),
-                 ),
-               ),
-             ])}>
+           <div >
              {React.array(
                 Belt.Array.mapWithIndex(items, (key, item) =>
                   <div
-                    key={Int.to_string(key)}
-                    className={Css.style([
-                      Css.display(`block),
-                      Css.margin2(~h=`zero, ~v=`rem(0.3)),
-                    ])}>
+                    key={Int.to_string(key)} >
                     <span
-                      onClick={_e => onClick(item)}
-                      className={Css.style([
-                        Css.color(Theme.Color.lightGrey),
-                        Css.cursor(`pointer),
-                        Css.fontSize(`px(14)),
-                        Css.whiteSpace(`nowrap),
-                        Css.hover([Css.color(Theme.Color.white)]),
-                      ])}>
+                      onClick={_e => onClick(item)} >
                       {React.string(item)}
                     </span>
                   </div>
@@ -209,7 +156,7 @@ module Menu = {
      }; */
 
   [@react.component]
-  let make = (~currentNavigate: string, ~navigate: string => unit) => {
+  let make = (~navigate: string => unit) => {
     let (tools, _setTools) =
       useStateValue([|
         "Dashboard",
@@ -234,62 +181,29 @@ module Menu = {
 
     let externalLinks = [|"Community", "Academy"|];
 
-    <div
-      className={Css.style([
-        Css.display(`flex),
-        Css.alignItems(`center),
-        Css.justifyContent(`left),
-        Css.unsafe("gap", "1rem"),
-        Css.marginTop(`px(1)),
-        Css.padding2(~v=`rem(0.5), ~h=`rem(1.5)),
-      ])}>
+    <div >
       {React.array(
          Belt.Array.mapWithIndex(tools, (key, item) =>
            <div
-             key={Int.to_string(key)}
-             className={Css.style([Css.display(`block)])}>
+             key={Int.to_string(key)} >
              <span
-               onClick={_e => navigate(item)}
-               className={Css.style([
-                 currentNavigate == item
-                   ? Css.color(Theme.Color.white)
-                   : Css.color(Theme.Color.lightGrey),
-                 Css.cursor(`pointer),
-                 Css.fontSize(`px(14)),
-                 Css.whiteSpace(`nowrap),
-                 Css.hover([Css.color(Theme.Color.white)]),
-               ])}>
+               onClick={_e => navigate(item)} >
                {React.string(item)}
              </span>
            </div>
          ),
        )}
       <Dropdown items=moreTools onClick=navigate />
-      <span
-        className={Css.style([
-          Css.color(Theme.Color.white),
-          Css.fontSize(`px(10)),
-          Css.userSelect(`none),
-        ])}>
+      <span >
         {React.string("|")}
       </span>
       {React.array(
          Belt.Array.mapWithIndex(externalLinks, (key, item) =>
            <div
-             key={Int.to_string(key)}
-             className={Css.style([Css.display(`block)])}>
+             key={Int.to_string(key)} >
              <span
-               onClick={_e => navigate(item)}
-               className={Css.style([
-                 currentNavigate == item
-                   ? Css.color(Theme.Color.white)
-                   : Css.color(Theme.Color.lightGrey),
-                 Css.cursor(`pointer),
-                 Css.fontSize(`px(14)),
-                 Css.whiteSpace(`nowrap),
-                 Css.hover([Css.color(Theme.Color.white)]),
-               ])}>
-               <Row gap=1> {React.string(item)} <ExternalLinkIcon /> </Row>
+               onClick={_e => navigate(item)} >
+               <Row> {React.string(item)} <ExternalLinkIcon /> </Row>
              </span>
            </div>
          ),
@@ -302,19 +216,15 @@ module Menu = {
 let make = () => {
   let (currentNavigate, setNavigate) = useStateValue("Dashboard");
 
-  <Root background=Theme.Color.brokenWhite>
+  <Root>
     <Panel>
-      <Row justify=`start align=`center>
-        <Spacer bottom=1> <Logo /> </Spacer>
-        <Menu currentNavigate navigate={to_ => setNavigate(to_) |> ignore} />
+      <Row>
+        <Spacer> <Logo /> </Spacer>
+        <Menu navigate={to_ => setNavigate(to_) |> ignore} />
       </Row>
       <SubHeader />
     </Panel>
-    <div
-      className={Css.style([
-        Css.height(`px(200)),
-        Css.width(`percent(100.)),
-      ])}>
+    <div>
       <Align> <h2> {React.string(currentNavigate)} </h2> </Align>
     </div>
   </Root>;
