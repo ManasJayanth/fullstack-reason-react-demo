@@ -2,8 +2,8 @@
   "name": "fullstack-reason-react-demo",
   "dependencies": {
     "@emotion/css": "^11.10.6",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "18.x",
+    "react-dom": "18.x",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
   },
