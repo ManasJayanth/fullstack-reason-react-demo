@@ -8,6 +8,6 @@
   server-reason-react.js
   server-reason-react.belt)
  (preprocess
-  (pps melange.ppx server-reason-react.ppx)))
+  (pps server-reason-react.ppx)))
 
 (copy_files# "../*.re")

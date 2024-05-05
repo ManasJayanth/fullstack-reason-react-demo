@@ -6,7 +6,7 @@
   server-reason-react.react
   server-reason-react.reactDom)
  (preprocess
-  (pps server-reason-react.ppx melange.ppx lwt_ppx)))
+  (pps server-reason-react.ppx lwt_ppx)))
 
 (rule
  (alias server)
