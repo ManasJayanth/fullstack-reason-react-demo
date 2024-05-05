@@ -1,27 +1,21 @@
 {
   "name": "fullstack-reason-react-demo",
   "dependencies": {
-    "ocaml": "4.14.x",
+    "ocaml": "5.x",
     "@opam/conf-libssl": "3",
-    "@opam/dream": "1.0.0~alpha4",
+    "@opam/dream": "*",
     "@opam/dune": "*",
     "@opam/melange": "*",
     "@opam/reason": "*",
-    "@opam/reactjs-jsx-ppx": "*",
-    "@opam/rescript-syntax": "*",
-    "@opam/melange-compiler-libs": "*",
-    "server-reason-react": "*"
+    "@opam/reason-react": "*",
+    "@opam/reason-react-ppx": "*",
+    "@opam/server-reason-react": "*"
   },
   "devDependencies": {
-    "@opam/ocaml-lsp-server": "1.15.1-4.14"
+    "@opam/ocaml-lsp-server": "*"
   },
   "resolutions": {
-    "esy-openssl": "esy-packages/esy-openssl#619ae2d",
-    "server-reason-react": "ml-in-barcelona/server-reason-react:server-reason-react.opam#16fac6cfec3c711e06006ef6efbd23e1fbbdfacd",
-    "@opam/melange": "melange-re/melange:melange.opam#ebc038332c16e331ee4ab9017426e63461157cdd",
-    "@opam/melange-compiler-libs": "melange-re/melange-compiler-libs:melange-compiler-libs.opam#575ac4c24b296ea897821f9aaee1146ff258c704",
-    "@opam/rescript-syntax": "melange-re/melange:rescript-syntax.opam#ebc038332c16e331ee4ab9017426e63461157cdd",
-    "@opam/reason": "reasonml/reason:reason.opam#0ce98e0cb1b07eecba948a27006787b33d93f0ed"
+    "esy-openssl": "esy-packages/esy-openssl#619ae2d"
   },
   "installConfig": { "pnp": false },
   "esy": {
