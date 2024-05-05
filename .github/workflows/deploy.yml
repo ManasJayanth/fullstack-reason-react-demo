@@ -1,4 +1,4 @@
-name: Deploy on fly.io
+name: Build on CI
 
 on:
   push:
@@ -14,7 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --app fullstack-reason-react-demo --remote-only
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      - uses: actions/setup-node@v2
+      - name: Install esy
+        run: npm install -g esy
+      - uses: esy/github-action@v1
+        with:
+          cache-key: ${{ hashFiles('esy.lock/index.json') }}
+      - name: Export esy cache
+        run: esy export-dependencies
+      - uses: actions/upload-artifact@v4.3.1
+        with:
+          name: release
+          path: _export
+
