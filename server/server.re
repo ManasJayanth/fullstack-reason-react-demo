@@ -35,18 +35,6 @@ module Page = {
           rel="shortcut icon"
           href="https://reasonml.github.io/img/icon_50.png"
         />
-        <style
-          type_="text/css"
-          dangerouslySetInnerHTML={"__html": globalStyles}
-        />
-        {styles
-         |> List.map(content =>
-              <style
-                type_="text/css"
-                dangerouslySetInnerHTML={"__html": content}
-              />
-            )
-         |> React.list}
       </head>
       <body>
         <div id="root"> children </div>
