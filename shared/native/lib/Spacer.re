@@ -1,6 +1,6 @@
 [@react.component]
 let make = (~children=?) => {
-  <div >
+  <div>
     {switch (children) {
      | None => React.null
      | Some(c) => c

@@ -1,24 +1,24 @@
 /* let globalStyles = {js| */
-/*   html, body, #root { */
-/*     margin: 0; */
-/*     padding: 0; */
-/*     width: 100vw; */
-/*     height: 100vh; */
-/*   } */
+   /*   html, body, #root { */
+   /*     margin: 0; */
+   /*     padding: 0; */
+   /*     width: 100vw; */
+   /*     height: 100vh; */
+   /*   } */
 
-/*   * { */
-/*     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; */
-/*     -webkit-font-smoothing: antialiased; */
-/*     -moz-osx-font-smoothing: grayscale; */
-/*     box-sizing: border-box; */
-/*   } */
+   /*   * { */
+   /*     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; */
+   /*     -webkit-font-smoothing: antialiased; */
+   /*     -moz-osx-font-smoothing: grayscale; */
+   /*     box-sizing: border-box; */
+   /*   } */
 
-/*   @keyframes spin { */
-/*     to { */
-/*       transform: rotate(360deg); */
-/*     } */
-/*   } */
-/* |js}; */
+   /*   @keyframes spin { */
+   /*     to { */
+   /*       transform: rotate(360deg); */
+   /*     } */
+   /*   } */
+   /* |js}; */
 
 module Page = {
   [@react.component]
@@ -49,17 +49,14 @@ let handler =
     Dream.get("/", _request =>
       Dream.html(
         ReactDOM.renderToString(
-          <Page scripts=["/static/app.js"]>
-            <Shared_native.App />
-          </Page>,
+          <Page scripts=["/static/app.js"]> <Shared_native.App /> </Page>,
         ),
       )
     ),
     Dream.get("/header", _request =>
       Dream.html(
         ReactDOM.renderToString(
-          <Page
-            scripts=["/static/header.js"]>
+          <Page scripts=["/static/header.js"]>
             <Shared_native.Ahrefs />
           </Page>,
         ),

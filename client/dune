@@ -15,4 +15,3 @@
  (preprocess
   (pps reason-react-ppx))
  (module_systems commonjs))
-

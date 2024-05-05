@@ -22,6 +22,6 @@ module Counter = {
 };
 
 switch (ReactDOM.querySelector("#root")) {
-| Some(el) => ignore @@ ReactDOM.Client.hydrateRoot(el,<Shared_js.App />)
+| Some(el) => ignore @@ ReactDOM.Client.hydrateRoot(el, <Shared_js.App />)
 | None => ()
 };

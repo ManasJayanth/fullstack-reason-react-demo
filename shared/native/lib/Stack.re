@@ -1,5 +1,4 @@
 [@react.component]
-let make =
-    (~children) => {
+let make = (~children) => {
   <div> children </div>;
 };

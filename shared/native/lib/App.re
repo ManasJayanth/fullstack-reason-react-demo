@@ -1,19 +1,14 @@
 module Hr = {
   [@react.component]
   let make = () => {
-    <span
-      
-    />;
+    <span />;
   };
 };
 
 module Layout = {
   [@react.component]
   let make = (~children) => {
-    <div
-      >
-      children
-    </div>;
+    <div> children </div>;
   };
 };
 
@@ -38,17 +33,11 @@ module Header = {
         {label: "About", link: "https://twitter.com/davesnx"},
       |];
 
-      <div
-        >
+      <div>
         {React.array(
            Belt.Array.mapWithIndex(data, (key, item) =>
-             <div
-               
-               key={Int.to_string(key)}>
-               <a
-                 href={item.link}
-                 target="_blank"
-                 >
+             <div key={Int.to_string(key)}>
+               <a href={item.link} target="_blank">
                  {React.string(item.label)}
                </a>
              </div>
@@ -61,9 +50,7 @@ module Header = {
   [@react.component]
   let make = () => {
     <div>
-      <h1>
-        {React.string("Server Reason React")}
-      </h1>
+      <h1> {React.string("Server Reason React")} </h1>
       <Spacer> <Menu /> </Spacer>
     </div>;
   };
@@ -72,10 +59,6 @@ module Header = {
 [@react.component]
 let make = () => {
   <Root>
-    <Layout>
-      <Stack>
-        <> <Header /> <Hr /> <Counter /> </>
-      </Stack>
-    </Layout>
+    <Layout> <Stack> <> <Header /> <Hr /> <Counter /> </> </Stack> </Layout>
   </Root>;
 };

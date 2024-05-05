@@ -1,6 +1,4 @@
 [@react.component]
 let make = (~children) => {
-  <div >
-    children
-  </div>;
+  <div> children </div>;
 };

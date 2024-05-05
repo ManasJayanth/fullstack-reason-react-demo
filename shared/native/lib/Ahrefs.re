@@ -20,18 +20,14 @@ let useStateValue = (initial: 'a) => {
 module ExternalLinkIcon = {
   [@react.component]
   let make = () => {
-    <span >
-      {React.string({js|🔗|js})}
-    </span>;
+    <span> {React.string({js|🔗|js})} </span>;
   };
 };
 
 module Panel = {
   [@react.component]
   let make = (~children) => {
-    <div>
-      children
-    </div>;
+    <div> children </div>;
   };
 };
 
@@ -42,12 +38,8 @@ module ShrinkerText = {
     let rest = String.sub(children, 1, String.length(children) - 1);
 
     <>
-      <span >
-        {React.string(first)}
-      </span>
-      <span >
-        {React.string(rest)}
-      </span>
+      <span> {React.string(first)} </span>
+      <span> {React.string(rest)} </span>
     </>;
   };
 };
@@ -55,9 +47,7 @@ module ShrinkerText = {
 module Logo = {
   [@react.component]
   let make = () => {
-    <p >
-      <ShrinkerText> "ahrefs" </ShrinkerText>
-    </p>;
+    <p> <ShrinkerText> "ahrefs" </ShrinkerText> </p>;
   };
 };
 
@@ -65,9 +55,7 @@ module Dropdown = {
   module Trigger = {
     [@react.component]
     let make = (~onClick) => {
-      <div onClick>
-        {React.string("More tools")}
-      </div>;
+      <div onClick> {React.string("More tools")} </div>;
     };
   };
 
@@ -111,17 +99,15 @@ module Dropdown = {
          }
        ); */
 
-    <div >
+    <div>
       <Trigger onClick={_e => setIsOpen(!isOpen)} />
       {isOpen
          ? {
-           <div >
+           <div>
              {React.array(
                 Belt.Array.mapWithIndex(items, (key, item) =>
-                  <div
-                    key={Int.to_string(key)} >
-                    <span
-                      onClick={_e => onClick(item)} >
+                  <div key={Int.to_string(key)}>
+                    <span onClick={_e => onClick(item)}>
                       {React.string(item)}
                     </span>
                   </div>
@@ -181,28 +167,22 @@ module Menu = {
 
     let externalLinks = [|"Community", "Academy"|];
 
-    <div >
+    <div>
       {React.array(
          Belt.Array.mapWithIndex(tools, (key, item) =>
-           <div
-             key={Int.to_string(key)} >
-             <span
-               onClick={_e => navigate(item)} >
+           <div key={Int.to_string(key)}>
+             <span onClick={_e => navigate(item)}>
                {React.string(item)}
              </span>
            </div>
          ),
        )}
       <Dropdown items=moreTools onClick=navigate />
-      <span >
-        {React.string("|")}
-      </span>
+      <span> {React.string("|")} </span>
       {React.array(
          Belt.Array.mapWithIndex(externalLinks, (key, item) =>
-           <div
-             key={Int.to_string(key)} >
-             <span
-               onClick={_e => navigate(item)} >
+           <div key={Int.to_string(key)}>
+             <span onClick={_e => navigate(item)}>
                <Row> {React.string(item)} <ExternalLinkIcon /> </Row>
              </span>
            </div>
@@ -224,8 +204,6 @@ let make = () => {
       </Row>
       <SubHeader />
     </Panel>
-    <div>
-      <Align> <h2> {React.string(currentNavigate)} </h2> </Align>
-    </div>
+    <div> <Align> <h2> {React.string(currentNavigate)} </h2> </Align> </div>
   </Root>;
 };
