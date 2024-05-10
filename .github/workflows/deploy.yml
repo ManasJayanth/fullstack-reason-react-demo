@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Install esy
         run: npm install -g esy
-      - uses: esy/github-action@v1
+      - uses: esy/github-action@4cde7829376ee130ecbe46af18fbaebc4f574fd6
         with:
           cache-key: ${{ hashFiles('esy.lock/index.json') }}
       - name: Export esy cache
