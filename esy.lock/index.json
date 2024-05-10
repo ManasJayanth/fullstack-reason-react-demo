@@ -1,18 +1,20 @@
 {
-  "checksum": "1040611adc5ad18be00744a60c117f72",
+  "checksum": "882ab9fd166f66cc18a9b9e38baa1ca8",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
-    "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
-      "id": "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9",
+    "yarn-pkg-config@archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591@e8a73529": {
+      "id": "yarn-pkg-config@archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591@e8a73529",
       "name": "yarn-pkg-config",
-      "version": "github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79",
+      "version": "archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591",
       "source": {
         "type": "install",
         "source": [
-          "github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79"
+          "archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591"
         ]
       },
-      "overrides": [],
+      "overrides": [
+        "esy.lock/overrides/e8a7352994ed31581c35b6ae0be6a331/esy.json"
+      ],
       "dependencies": [],
       "devDependencies": []
     },
@@ -45,7 +47,7 @@
         "@opam/melange@opam:3.0.0-51@e09e16de",
         "@opam/dune@opam:3.15.2@d8da42a0",
         "@opam/dream@opam:1.0.0~alpha5@84e3f5ed",
-        "@opam/conf-libssl@opam:3@7fc50e3c"
+        "@opam/conf-libssl@no-source:@721e532b"
       ],
       "devDependencies": [ "@opam/ocaml-lsp-server@opam:1.17.0@12f65153" ],
       "installConfig": { "pnp": false }
@@ -62,7 +64,7 @@
       },
       "overrides": [ "esy.lock/overrides/12334d8c8174ddad73ef845bb6bc12a1" ],
       "dependencies": [
-        "@opam/conf-pkg-config@opam:2@754285a7",
+        "@opam/conf-pkg-config@opam:3@b7966e7f",
         "@opam/conf-autoconf@github:esy-packages/esy-autoconf:package.json#fb93edf@d41d8cd9"
       ],
       "devDependencies": []
@@ -361,14 +363,14 @@
         "ocaml@5.1.1000@d41d8cd9",
         "@opam/dune-configurator@opam:3.15.2@c9f3961b",
         "@opam/dune@opam:3.15.2@d8da42a0",
-        "@opam/conf-libssl@opam:3@7fc50e3c",
+        "@opam/conf-libssl@no-source:@721e532b",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
         "ocaml@5.1.1000@d41d8cd9",
         "@opam/dune-configurator@opam:3.15.2@c9f3961b",
         "@opam/dune@opam:3.15.2@d8da42a0",
-        "@opam/conf-libssl@opam:3@7fc50e3c"
+        "@opam/conf-libssl@no-source:@721e532b"
       ]
     },
     "@opam/spawn@opam:v0.15.1@85e9d6f1": {
@@ -2569,52 +2571,38 @@
         "@opam/base-unix@opam:base@87d0b2eb"
       ]
     },
-    "@opam/conf-pkg-config@opam:2@754285a7": {
-      "id": "@opam/conf-pkg-config@opam:2@754285a7",
+    "@opam/conf-pkg-config@opam:3@b7966e7f": {
+      "id": "@opam/conf-pkg-config@opam:3@b7966e7f",
       "name": "@opam/conf-pkg-config",
-      "version": "opam:2",
-      "source": {
-        "type": "install",
-        "source": [ "no-source:" ],
-        "opam": {
-          "name": "conf-pkg-config",
-          "version": "2",
-          "path": "esy.lock/opam/conf-pkg-config.2"
-        }
-      },
-      "overrides": [
-        {
-          "opamoverride": "esy.lock/overrides/opam__s__conf_pkg_config_opam__c__2_opam_override"
-        }
-      ],
-      "dependencies": [
-        "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9",
-        "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": []
-    },
-    "@opam/conf-libssl@opam:3@7fc50e3c": {
-      "id": "@opam/conf-libssl@opam:3@7fc50e3c",
-      "name": "@opam/conf-libssl",
       "version": "opam:3",
       "source": {
         "type": "install",
         "source": [ "no-source:" ],
         "opam": {
-          "name": "conf-libssl",
+          "name": "conf-pkg-config",
           "version": "3",
-          "path": "esy.lock/opam/conf-libssl.3"
+          "path": "esy.lock/opam/conf-pkg-config.3"
         }
       },
       "overrides": [
         {
-          "opamoverride": "esy.lock/overrides/opam__s__conf_libssl_opam__c__3_opam_override"
+          "opamoverride": "esy.lock/overrides/opam__s__conf_pkg_config_opam__c__3_opam_override"
         }
       ],
       "dependencies": [
-        "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1@12334d8c",
-        "@opam/conf-pkg-config@opam:2@754285a7",
+        "yarn-pkg-config@archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591@e8a73529",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "@opam/conf-libssl@no-source:@721e532b": {
+      "id": "@opam/conf-libssl@no-source:@721e532b",
+      "name": "@opam/conf-libssl",
+      "version": "no-source:",
+      "source": { "type": "install", "source": [ "no-source:" ] },
+      "overrides": [ { "dependencies": { "esy-openssl": "*" } } ],
+      "dependencies": [
+        "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1@12334d8c"
       ],
       "devDependencies": []
     },
@@ -2836,7 +2824,7 @@
       "overrides": [],
       "dependencies": [
         "ocaml@5.1.1000@d41d8cd9", "@opam/dune@opam:3.15.2@d8da42a0",
-        "@opam/conf-pkg-config@opam:2@754285a7",
+        "@opam/conf-pkg-config@opam:3@b7966e7f",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [

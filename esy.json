@@ -15,6 +15,17 @@
     "@opam/ocaml-lsp-server": "*"
   },
   "resolutions": {
+    "esy-openssl": "esy-packages/esy-openssl#619ae2d",
+    "@opam/conf-libssl": {
+      "source": "no-source:",
+      "override": {
+        "dependencies": {
+          "esy-openssl": "*"
+        }
+      }
+    },
+    "yarn-pkg-config": "ManasJayanth/esy-pkg-config:esy.json#487c3ec9b6848dfb4cb37b2530054a7f41dd8ba7",
+    "esy-pkg-config": "ManasJayanth/esy-pkg-config:esy.json#b0ce6ee9d7c394206ae1768192e57e4903f17c3c",
     "esy-openssl": "esy-packages/esy-openssl#619ae2d"
   },
   "installConfig": { "pnp": false },
