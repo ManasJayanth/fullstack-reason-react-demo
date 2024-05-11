@@ -44,7 +44,7 @@
         "@opam/reason-react-ppx@opam:0.14.0@6ee1848f",
         "@opam/reason-react@opam:0.14.0@2fcb5383",
         "@opam/reason@opam:3.11.0@6ad0e561",
-        "@opam/melange@opam:3.0.0-51@18d4bc37",
+        "@opam/melange@opam:3.0.0-51@8246e3ca",
         "@opam/dune@opam:3.15.2@d8da42a0",
         "@opam/dream@opam:1.0.0~alpha5@84e3f5ed",
         "@opam/conf-libssl@no-source:@721e532b"
@@ -446,7 +446,7 @@
         "@opam/quickjs@opam:0.1.1@fae5868f",
         "@opam/promise@opam:1.1.2@837de3a7",
         "@opam/ppxlib@opam:0.32.1@9897cafd",
-        "@opam/melange@opam:3.0.0-51@18d4bc37",
+        "@opam/melange@opam:3.0.0-51@8246e3ca",
         "@opam/lwt_ppx@opam:2.1.0@f0dd3e73", "@opam/lwt@opam:5.7.0@4a33823d",
         "@opam/dune@opam:3.15.2@d8da42a0", "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
@@ -456,7 +456,7 @@
         "@opam/quickjs@opam:0.1.1@fae5868f",
         "@opam/promise@opam:1.1.2@837de3a7",
         "@opam/ppxlib@opam:0.32.1@9897cafd",
-        "@opam/melange@opam:3.0.0-51@18d4bc37",
+        "@opam/melange@opam:3.0.0-51@8246e3ca",
         "@opam/lwt_ppx@opam:2.1.0@f0dd3e73", "@opam/lwt@opam:5.7.0@4a33823d",
         "@opam/dune@opam:3.15.2@d8da42a0"
       ]
@@ -579,14 +579,14 @@
         "ocaml@5.1.1000@d41d8cd9",
         "@opam/reason-react-ppx@opam:0.14.0@6ee1848f",
         "@opam/reason@opam:3.11.0@6ad0e561",
-        "@opam/melange@opam:3.0.0-51@18d4bc37",
+        "@opam/melange@opam:3.0.0-51@8246e3ca",
         "@opam/dune@opam:3.15.2@d8da42a0", "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
         "ocaml@5.1.1000@d41d8cd9",
         "@opam/reason-react-ppx@opam:0.14.0@6ee1848f",
         "@opam/reason@opam:3.11.0@6ad0e561",
-        "@opam/melange@opam:3.0.0-51@18d4bc37",
+        "@opam/melange@opam:3.0.0-51@8246e3ca",
         "@opam/dune@opam:3.15.2@d8da42a0"
       ]
     },
@@ -1578,8 +1578,8 @@
         "@opam/dune@opam:3.15.2@d8da42a0"
       ]
     },
-    "@opam/melange@opam:3.0.0-51@18d4bc37": {
-      "id": "@opam/melange@opam:3.0.0-51@18d4bc37",
+    "@opam/melange@opam:3.0.0-51@8246e3ca": {
+      "id": "@opam/melange@opam:3.0.0-51@8246e3ca",
       "name": "@opam/melange",
       "version": "opam:3.0.0-51",
       "source": {
