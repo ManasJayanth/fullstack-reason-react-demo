@@ -15,14 +15,6 @@
     "@opam/ocaml-lsp-server": "*"
   },
   "resolutions": {
-    "@opam/ssl": {
-      "version": "opam:0.7.0",
-      "override": {
-        "buildEnv": {
-          "HOME": "#{self.target_dir}"
-        }
-      }
-    },
     "esy-openssl": "esy-packages/esy-openssl#619ae2d",
     "@opam/conf-libssl": {
       "source": "no-source:",
