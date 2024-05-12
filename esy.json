@@ -33,7 +33,7 @@
         }
       }
     },
-    "esy-openssl": "esy-packages/esy-openssl#619ae2d"
+    "esy-openssl": "ManasJayanth/esy-openssl:esy.json#9fa3c66632d4e5861a0a11c62f9237bba2af6f68"
   },
   "installConfig": { "pnp": false },
   "esy": {
