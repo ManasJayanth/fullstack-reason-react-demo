@@ -1,5 +1,5 @@
 {
-  "checksum": "97d53a839099e1a5624601b12516cac6",
+  "checksum": "7917a60be3fbeb870fa67f7c55ce0ded",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "ocaml@5.1.1000@d41d8cd9": {
@@ -36,19 +36,17 @@
       "devDependencies": [ "@opam/ocaml-lsp-server@opam:1.17.0@12f65153" ],
       "installConfig": { "pnp": false }
     },
-    "esy-pkg-config@archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591@7ec7dc6c": {
-      "id": "esy-pkg-config@archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591@7ec7dc6c",
+    "esy-pkg-config@0.29.2002@d41d8cd9": {
+      "id": "esy-pkg-config@0.29.2002@d41d8cd9",
       "name": "esy-pkg-config",
-      "version": "archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591",
+      "version": "0.29.2002",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591"
+          "archive:https://registry.npmjs.org/esy-pkg-config/-/esy-pkg-config-0.29.2002.tgz#sha1:a629182b81f03cc192f1c6e5b356b416d3479901"
         ]
       },
-      "overrides": [
-        "esy.lock/overrides/7ec7dc6c6a4d8c4ca736ff28a343809d/esy.json"
-      ],
+      "overrides": [],
       "dependencies": [],
       "devDependencies": []
     },
@@ -2585,9 +2583,7 @@
       "version": "no-source:",
       "source": { "type": "install", "source": [ "no-source:" ] },
       "overrides": [ { "dependencies": { "esy-pkg-config": "*" } } ],
-      "dependencies": [
-        "esy-pkg-config@archive:https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha256:6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591@7ec7dc6c"
-      ],
+      "dependencies": [ "esy-pkg-config@0.29.2002@d41d8cd9" ],
       "devDependencies": []
     },
     "@opam/conf-libssl@no-source:@721e532b": {

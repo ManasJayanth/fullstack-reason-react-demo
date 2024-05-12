@@ -33,7 +33,6 @@
         }
       }
     },
-    "esy-pkg-config": "ManasJayanth/esy-pkg-config:esy.json#43f296eef50bfb21407670fc949325e72955c2ef",
     "esy-openssl": "esy-packages/esy-openssl#619ae2d"
   },
   "installConfig": { "pnp": false },
