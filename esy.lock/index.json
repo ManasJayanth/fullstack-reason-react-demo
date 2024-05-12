@@ -1,5 +1,5 @@
 {
-  "checksum": "846ea98a556a19e0e068538a954f0c94",
+  "checksum": "3a1f135e7c5cc2e40fb10ca6a936b74f",
   "root": "fullstack-reason-react-demo@link-dev:./esy.json",
   "node": {
     "ocaml@5.1.1000@d41d8cd9": {
@@ -31,7 +31,7 @@
         "@opam/melange@opam:3.0.0-51@8246e3ca",
         "@opam/dune@opam:3.15.2@d8da42a0",
         "@opam/dream@opam:1.0.0~alpha5@84e3f5ed",
-        "@opam/conf-libssl@no-source:@721e532b"
+        "@opam/conf-libssl@opam:4@e50a4efa"
       ],
       "devDependencies": [ "@opam/ocaml-lsp-server@opam:1.17.0@12f65153" ],
       "installConfig": { "pnp": false }
@@ -346,14 +346,14 @@
         "ocaml@5.1.1000@d41d8cd9",
         "@opam/dune-configurator@opam:3.15.2@17c55e1e",
         "@opam/dune@opam:3.15.2@d8da42a0",
-        "@opam/conf-libssl@no-source:@721e532b",
+        "@opam/conf-libssl@opam:4@e50a4efa",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
         "ocaml@5.1.1000@d41d8cd9",
         "@opam/dune-configurator@opam:3.15.2@17c55e1e",
         "@opam/dune@opam:3.15.2@d8da42a0",
-        "@opam/conf-libssl@no-source:@721e532b"
+        "@opam/conf-libssl@opam:4@e50a4efa"
       ]
     },
     "@opam/spawn@opam:v0.15.1@85e9d6f1": {
@@ -2571,14 +2571,24 @@
       "dependencies": [ "esy-pkg-config@0.29.2002@d41d8cd9" ],
       "devDependencies": []
     },
-    "@opam/conf-libssl@no-source:@721e532b": {
-      "id": "@opam/conf-libssl@no-source:@721e532b",
+    "@opam/conf-libssl@opam:4@e50a4efa": {
+      "id": "@opam/conf-libssl@opam:4@e50a4efa",
       "name": "@opam/conf-libssl",
-      "version": "no-source:",
-      "source": { "type": "install", "source": [ "no-source:" ] },
+      "version": "opam:4",
+      "source": {
+        "type": "install",
+        "source": [ "no-source:" ],
+        "opam": {
+          "name": "conf-libssl",
+          "version": "4",
+          "path": "esy.lock/opam/conf-libssl.4"
+        }
+      },
       "overrides": [ { "dependencies": { "esy-openssl": "*" } } ],
       "dependencies": [
-        "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1t.tar.gz#sha256:8dee9b24bdb1dcbf0c3d1e9b02fb8f6bf22165e807f45adeb7c9677536859d3b@feaa6434"
+        "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1t.tar.gz#sha256:8dee9b24bdb1dcbf0c3d1e9b02fb8f6bf22165e807f45adeb7c9677536859d3b@feaa6434",
+        "@opam/conf-pkg-config@no-source:@a9560020",
+        "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": []
     },

@@ -16,9 +16,8 @@
   },
   "resolutions": {
     "esy-gmp": "esy-packages/esy-gmp:package.json#58aa36e793a20f24da415a4ee98223c596bd546e",
-    "esy-openssl": "esy-packages/esy-openssl#619ae2d",
     "@opam/conf-libssl": {
-      "source": "no-source:",
+      "version": "opam:4",
       "override": {
         "dependencies": {
           "esy-openssl": "*"
