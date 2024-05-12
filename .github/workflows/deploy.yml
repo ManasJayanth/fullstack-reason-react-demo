@@ -10,20 +10,24 @@ on:
 
 jobs:
   deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest, macos-13]
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - name: Install esy
         run: npm install -g esy
-      - uses: esy/github-action@v1
+      - uses: esy/github-action@6a5070d392db3e8c776724674737cab37c07263d
         with:
-          cache-key: ${{ hashFiles('esy.lock/index.json') }}
+          source-cache-key: 20240511-2
+          cache-key: ${{ hashFiles('esy.lock/index.json') }}-20240511-1
       - name: Export esy cache
         run: esy export-dependencies
       - uses: actions/upload-artifact@v4.3.1
         with:
-          name: release
+          name: dependencies-cache-${{ matrix.os }}
           path: _export
 
